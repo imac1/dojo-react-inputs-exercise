@@ -24,11 +24,11 @@ import { fakeSend } from '../lib/fake-send';
 
 export default function Task2() {
   const handleSend = (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
-    const petName = event.target.petName.value; // Get the input value
-    fakeSend({ petName }) // Send the pet name
-      .then((data) => console.log(data.petName)) // Log the response data
-      .catch((error) => console.error('Error:', error)); // Handle errors
+    event.preventDefault(); 
+    const petName = event.target.petName.value; 
+    fakeSend({ petName }) 
+      .then((data) => console.log(data.petName)) 
+      .catch((error) => console.error('Error:', error)); 
   };
 
 
