@@ -30,6 +30,10 @@ import { fakeSend } from '../lib/fake-send';
 export default function Task1() {
 
   const [petName, setPetName] = useState('')
+  function handleClick() {
+    fakeSend({petName}).then(data => console.log(data.petName))
+    .catch((error)=> console.error('Error:', error))
+  }
 
   return (
     <>
@@ -38,12 +42,13 @@ export default function Task1() {
       <label>Pet name: 
       <input value={petName}
       onChange={e => setPetName(e.target.value)}
-      
       />
       </label>
+      
+      <button  onClick={handleClick}>Send Pet</button>
       <p>your pet name is {petName}</p>
       
-      
+    
     </>
   );
 }
