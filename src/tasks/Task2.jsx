@@ -40,7 +40,7 @@ export default function Task2() {
       <input type="text" id='petName' name='petName' />
       <button type='submit'>Send Pet</button>
       </form>
-      <form action=""></form>
+ 
     </>
   );
 }
