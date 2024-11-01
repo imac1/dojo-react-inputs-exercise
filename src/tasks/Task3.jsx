@@ -20,6 +20,7 @@
  */
 
 import { fakeSend } from '../lib/fake-send';
+import { useState } from 'react';
 
 const petKinds = [
   'Cat',
@@ -31,12 +32,32 @@ const petKinds = [
   'Mouse'
 ]
 
+
 export default function Task3() {
+
+  const [petName, setPetName] = useState('')
+
+const handlePetChange = (event) => {
+  const newPetName = event.target.value;
+  setPetName(newPetName)
+  fakeSend({ petName: newPetName }) 
+  .then((data) => console.log(data.petName)) 
+  .catch((error) => console.error('Error:', error)); 
+
+}
+
 
 
   return (
     <>
       <h2>Task3</h2>
+      <label htmlFor="petName">Pet Name
+        <select name="petKinds" id="petKinds"   onChange={handlePetChange} value={petName}>
+          <option  key="default" value="">Select Pet</option>
+          {petKinds.map((kind) => <option key={kind} value={kind} >{kind}</option>)}
+
+        </select>
+      </label>
     </>
   );
 }

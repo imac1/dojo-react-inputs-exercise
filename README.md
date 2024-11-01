@@ -18,3 +18,5 @@
 - [ ] disable the inputs while submitting a form
 - [ ] create a textarea, show the remaining characters from 160 char max
 - [ ] create a complex form, with different type of fields
+
+run npm run dev to start
