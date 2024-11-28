@@ -27,7 +27,9 @@ import { useState } from 'react';
 import { fakeSend } from '../lib/fake-send';
 
 
+
 export default function Task1() {
+
 
   const [petName, setPetName] = useState('')
   function handleClick() {
@@ -41,11 +43,12 @@ export default function Task1() {
       <h2>Task1</h2>
       <label>Pet name: 
       <input value={petName}
+     
       onChange={e => setPetName(e.target.value)}
       />
       </label>
       
-      <button  onClick={handleClick}>Send Pet</button>
+      <button  className='bg-red-700' onClick={handleClick}>Send Pet</button>
       <p>your pet name is {petName}</p>
       
     
